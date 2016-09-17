@@ -12,11 +12,16 @@ function setImg(roll, i) {
 }
 
 function roll() {
-  for(i = 0; i < 6; i++) {
-    var roll = Math.floor((Math.random() * 100) + 1);
-    console.log(roll);
-    setImg(roll, i);
-  }
+  var i = 0;
+  var int = setInterval(function(){
+  var roll = Math.floor((Math.random() * 100) + 1);
+  console.log(i, roll);
+  setImg(roll, i);
+  i+=1;
+    if (i == 6) {
+        clearInterval(int);
+      }
+    }, 1000);
 }
 
 document.getElementById('start').addEventListener('click', roll);
