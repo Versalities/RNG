@@ -16,12 +16,21 @@ function roll() {
   var int = setInterval(function(){
   var roll = Math.floor((Math.random() * 100) + 1);
   console.log(i, roll);
-  setImg(roll, i);
+  anim(i, roll);
   i+=1;
     if (i == 6) {
         clearInterval(int);
       }
-    }, 1000);
+    }, 500);
 }
 
 document.getElementById('start').addEventListener('click', roll);
+
+function anim(i, roll) {
+  var tab = document.getElementsByClassName('img-frame')[i];
+  $(tab).css('transform', 'rotateY(630deg)');
+    setTimeout( function() {
+            setImg(roll, i);
+            $(tab).css('transform', 'rotateY(1260deg)');
+       }, 3010);
+}
