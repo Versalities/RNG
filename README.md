@@ -1,11 +1,6 @@
-A simple project focused on RNG.
+A simple project focused on RNG(and animations).
 
-Steps:
+~ Original project revisioned, new task established. ~
 
-1.Build an RNG with JS without the use of Math.random()
+w/o summary for now
 
-Status: Done.
-
-2.Come up with something interesting which can be used with a newly-created RNG
-
-Status: brainstorming some ideas...
