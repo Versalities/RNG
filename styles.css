@@ -19,17 +19,34 @@ button:active {
 }
 
 #img-container {
-  max-height: 100%;
   text-align:center;
   margin-top:50px;
 }
 
 .img-frame {
-  display:inline-block;
+  display:block;
   width:200px;
   height:400px;
   background: url('img/blank.png') 50% 50% no-repeat;
   padding:10px;
   margin:10px;
   vertical-align: top;
+}
+
+.img-figure {
+  text-align: center;
+  display:inline-block;
+  margin:0 20px;
+  height: 470px;
+}
+
+span {
+  display:block;
+  font-size:16px;
+}
+
+#result-frame {
+  padding:30px;
+  text-align: center;
+  font-size:36px;
 }

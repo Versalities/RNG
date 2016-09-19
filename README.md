@@ -11,3 +11,4 @@ w/o summary for now
   Integrated Velocity.js, animations are smooth now. Encountered a problem with
   rerolling/rerunning though, that's why button will be disabled after the first roll
   and the page needs to be reloaded in order to run the script again.
+  Added some info text, wrong wording for now, will change later
