@@ -12,6 +12,7 @@ function setImg(roll, i) {
 }
 
 function roll() {
+  $('button').prop('disabled', true);
   var i = 0;
   var int = setInterval(function(){
   var roll = Math.floor((Math.random() * 100) + 1);
@@ -21,16 +22,20 @@ function roll() {
     if (i == 6) {
         clearInterval(int);
       }
-    }, 500);
+    }, 666);
 }
 
 document.getElementById('start').addEventListener('click', roll);
 
 function anim(i, roll) {
   var tab = document.getElementsByClassName('img-frame')[i];
-  $(tab).css('transform', 'rotateY(630deg)');
+  $(tab).velocity({
+    rotateY: "630deg"
+  }, 2000);
     setTimeout( function() {
             setImg(roll, i);
-            $(tab).css('transform', 'rotateY(1260deg)');
-       }, 3010);
+            $(tab).velocity({
+              rotateY: "720deg"
+            },700);
+       }, 2010);
 }
