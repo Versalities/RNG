@@ -50,3 +50,7 @@ span {
   text-align: center;
   font-size:36px;
 }
+
+#reload {
+  display:none;
+}

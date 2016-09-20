@@ -3,20 +3,20 @@ function setImg(roll, i) {
   var resultFrame = document.getElementsByClassName('roll-result')[i];
   if(roll > 0 && roll < 11) {
     imgFrame.style.backgroundImage = "url('img/Gold.png')";
-    resultFrame.innerHTML = "Chance: " + roll + "%";
+    resultFrame.innerHTML = "Roll Chance: " + roll + "%";
   }
   else if (roll > 10 && roll < 41) {
     imgFrame.style.backgroundImage = "url('img/Silver.png')";
-    resultFrame.innerHTML = "Chance: " + roll + "%";
+    resultFrame.innerHTML = "Roll Chance: " + roll + "%";
   }
   else {
     imgFrame.style.backgroundImage = "url('img/Bronze.png')";
-    resultFrame.innerHTML = "Chance: " + roll + "%";
+    resultFrame.innerHTML = "Roll Chance: " + roll + "%";
   }
 }
 
 function roll() {
-  $('button').prop('disabled', true);
+  $('#start').attr('disabled', true);
   var i = 0;
   var sum = 0;
   var int = setInterval(function(){
@@ -34,6 +34,7 @@ function roll() {
 }
 
 document.getElementById('start').addEventListener('click', roll);
+document.getElementById('reload').addEventListener('click', function(){location.reload()});
 
 function anim(i, roll) {
   var tab = document.getElementsByClassName('img-frame')[i];
@@ -51,12 +52,13 @@ function anim(i, roll) {
 function resultingChance(sum) {
   var ovrlChnc = Math.floor(sum/6);
   if (ovrlChnc < 21) {
-  $('#result-frame').html("Your overall chance is " + ovrlChnc + "% ! Wow, that's hella lucky!");
+  $('#result-frame').html("Your average rolled chance is " + ovrlChnc + "% ! Wow, that's hella lucky!");
   }
   else if (ovrlChnc > 20 && ovrlChnc < 41) {
-    $('#result-frame').html("Your overall chance is " + ovrlChnc + "% ! Decent luck right there");
+    $('#result-frame').html("Your average rolled chance is " + ovrlChnc + "% ! Decent luck right there");
   }
   else {
-    $('#result-frame').html("Your overall chance is " + ovrlChnc + "% ! Meh");
+    $('#result-frame').html("Your average rolled chance is " + ovrlChnc + "% ! Meh");
   }
+  $('#reload').velocity({ opacity: 1 }, { display: "block" }, 2000);
 }
